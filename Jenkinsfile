@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/yourusername/devops-interview-app.git'
-            }
+                git url: 'https://github.com/kkishorekumar04/devops-interview-app.git', credentialsId: 'github-pat'
+}
         }
 
         stage('Build Docker Images') {
