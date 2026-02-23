@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Interview Q&A</title>
+</head>
+<body>
+    <h1>DevOps Interview Questions</h1>
+    <ul id="questions"></ul>
+
+    <script>
+        fetch("http://localhost:3000/questions")
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById("questions");
+                data.forEach(q => {
+                    const li = document.createElement("li");
+                    li.textContent = q.question;
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => console.log(err));
+    </script>
+</body>
+</html>
